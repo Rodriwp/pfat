@@ -1,0 +1,31 @@
+package Parser;
+
+import java_cup.runtime.*;
+
+parser code {:
+	public static void main(String args[]) throws Exception {
+		new parser(new Lexer.Yylex(System.in)).parse();
+	}
+:}
+
+terminal SEMI, PLUS, TIMES, LPAREN, RPAREN;
+terminal Integer NUMBER;
+
+non terminal expr_list, expr_part, expr_part2;
+non terminal Integer expr;
+
+precedence left PLUS;
+precedence left TIMES;
+
+expr_list ::= expr_list expr_part | expr_part;
+expr_part ::= expr_part2 SEMI;
+expr_part2 ::= expr:e SEMI {: System.out.println(" = "+e+";"); :} ;
+expr      ::= NUMBER:n
+	      {: RESULT=n; :}
+            | expr:l PLUS expr:r
+	      {: RESULT=new Integer(l.intValue() + r.intValue()); :}
+	    | expr:l TIMES expr:r
+	      {: RESULT=new Integer(l.intValue() * r.intValue()); :}
+	    | LPAREN expr:e RPAREN
+	      {: RESULT=e; :}
+	    ;

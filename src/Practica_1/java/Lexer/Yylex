@@ -1,0 +1,56 @@
+package Lexer;
+
+import Errors.LexerException;
+import Parser.sym;
+
+%%
+%{
+private java_cup.runtime.Symbol tok(int k, Object value) {
+//  System.out.println("Token: " + k);
+  return new java_cup.runtime.Symbol(k, yyline, 0, value); 
+}
+%}
+
+%public
+%cup
+%line
+%yylexthrow{
+LexerException
+%yylexthrow} 
+%eofval{
+{return tok(sym.EOF, null); }
+%eofval}
+
+//añadir excepcion 
+
+letra= [a-zA-Z]
+
+
+%%
+
+and		{return tok(sym.AND, null); }
+or		{return tok(sym.OR, null); }
+PF2017	{return tok(sym.PROG, null); }
+vars	{return tok(sym.VARS, null); }
+while	{return tok(sym.WHILE, null); }
+print	{return tok(sym.PRINT, null); }
+break	{return tok(sym.BREAK, null); }
+Int2Str	{return tok(sym.INT2STR, null); }
+Str2Int	{return tok(sym.STR2INT, null); }
+if  	{return tok(sym.IF, null); }
+then	{return tok(sym.THEN, null); }
+else	{return tok(sym.ELSE, null); }
+endif	{return tok(sym.ENDIF, null); }
+//FIXME: rellenar el objeto para devolver el tipo de fichero 
+int 	{return tok(sym.TIPO, ); }
+bool	{return tok(sym.TIPO, ); }
+string	{return tok(sym.ELSE, ); }
+
+//signos de puntuacion y operadores 
+
+
+
+
+
+
+

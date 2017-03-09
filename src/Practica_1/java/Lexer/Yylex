@@ -5,10 +5,10 @@ import Parser.sym;
 
 %%
 %{
-private java_cup.runtime.Symbol tok(int k, Object value) {
-//  System.out.println("Token: " + k);
-  return new java_cup.runtime.Symbol(k, yyline, 0, value); 
-}
+    private java_cup.runtime.Symbol tok(int k, Object value) {
+        //  System.out.println("Token: " + k);
+        return new java_cup.runtime.Symbol(k, yyline, 0, value);
+    }
 %}
 
 %public
@@ -18,39 +18,49 @@ private java_cup.runtime.Symbol tok(int k, Object value) {
 LexerException
 %yylexthrow} 
 %eofval{
-{return tok(sym.EOF, null); }
+    {return tok(sym.EOF, null); }
 %eofval}
 
-//añadir excepcion 
-
-letra= [a-zA-Z]
-
+letras= [a-zA-Z]
+numeros = [0-9]
 
 %%
 
-and		{return tok(sym.AND, null); }
-or		{return tok(sym.OR, null); }
-PF2017	{return tok(sym.PROG, null); }
-vars	{return tok(sym.VARS, null); }
-while	{return tok(sym.WHILE, null); }
-print	{return tok(sym.PRINT, null); }
-break	{return tok(sym.BREAK, null); }
-Int2Str	{return tok(sym.INT2STR, null); }
-Str2Int	{return tok(sym.STR2INT, null); }
-if  	{return tok(sym.IF, null); }
-then	{return tok(sym.THEN, null); }
-else	{return tok(sym.ELSE, null); }
-endif	{return tok(sym.ENDIF, null); }
-//FIXME: rellenar el objeto para devolver el tipo de fichero 
-int 	{return tok(sym.TIPO, ); }
-bool	{return tok(sym.TIPO, ); }
-string	{return tok(sym.ELSE, ); }
-
-//signos de puntuacion y operadores 
-
-
-
-
-
-
-
+and     { return tok(sym.AND, null); }
+or	{ return tok(sym.OR, null); }
+not     { return tok(sym.NOT, null); }
+PF2017	{ return tok(sym.PROG, null); }
+vars	{ return tok(sym.VARS, null); }
+while	{ return tok(sym.WHILE, null); }
+print	{ return tok(sym.PRINT, null); }
+break	{ return tok(sym.BREAK, null); }
+Int2Str	{ return tok(sym.INT2STR, null); }
+Str2Int	{ return tok(sym.STR2INT, null); }
+if  	{ return tok(sym.IF, null); }
+then	{ return tok(sym.THEN, null); }
+else	{ return tok(sym.ELSE, null); }
+endif	{ return tok(sym.ENDIF, null); }
+int 	{ return tok(sym.TIPO,new Integer(0)); }
+bool	{ return tok(sym.TIPO,new Integer(1)); }
+string	{ return tok(sym.TIPO,new Integer(2)); }
+";"	{ return tok(sym.PC, null); }
+":="	{ return tok(sym.ASOP, null); }
+"+"	{ return tok(sym.MAS, null); }
+"-"	{ return tok(sym.MENOS, null); }
+"*"	{ return tok(sym.POR, null); }
+"/"	{ return tok(sym.DIV, null); }
+">"	{ return tok(sym.MAYORQUE, null); }
+"<"	{ return tok(sym.MENORQUE, null); }
+"="	{ return tok(sym.IGUALQUE, null); }
+"{"	{ return tok(sym.ABRELLAVE, null); }
+"}"	{ return tok(sym.CIERRALLAVE, null); }
+","	{ return tok(sym.COMA, null); }
+"("	{ return tok(sym.PAREN, null); }
+")"	{ return tok(sym.TESIS, null); }
+true    {return tok(sym.CLOG, new Boolean(true)); }
+false   {return tok(sym.CLOG, new Boolean(false)); }
+{letras}({letras}|{numeros})*	{ return tok(sym.IDENT, yytext()); }
+({numeros})+                    { return tok(sym.CENT, new Integer(yytext())); }
+(\"([^\"])*\")			{ return tok(sym.CST, yytext()); }
+(" "|\n|\t|\r)+ { }
+.       { throw new LexerException("Caracter Ilegal en linea" + yyline);}

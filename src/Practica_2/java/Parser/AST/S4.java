@@ -1,5 +1,7 @@
 package AST;
 
+import Errors.*;
+
 public class S4 implements S {
 	public final String ident;
 	public final LVar lvar;
@@ -12,4 +14,10 @@ public class S4 implements S {
 		this.vdef = vdef;
 		this.body = body;
 	}
+        public void computeAH1() throws CompilerExc {
+                lvar.computeAH1(SymbolTable.STRING);
+                vdef.computeAH1();
+                body.computeAH1();
+                body.checkBreak();
+        }
 }

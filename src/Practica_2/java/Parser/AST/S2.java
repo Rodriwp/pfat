@@ -1,5 +1,7 @@
 package AST;
 
+import Errors.*;
+
 public class S2 implements S {
 	public final String ident;
 	public final Sentencia body;
@@ -8,4 +10,8 @@ public class S2 implements S {
 		this.ident = ident;
 		this.body = body;
 	}
+        public void computeAH1() throws CompilerExc {
+                        body.computeAH1();
+                        body.checkBreak();
+        }
 }

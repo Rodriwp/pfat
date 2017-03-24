@@ -1,5 +1,7 @@
 package AST;
 
+import Errors.*;
+
 public class S3 implements S {
 	public final String ident;
 	public final VDef vdef;
@@ -10,4 +12,9 @@ public class S3 implements S {
 		this.vdef = vdef;
 		this.body = body;
 	}
+        public void computeAH1() throws CompilerExc {
+            vdef.computeAH1();
+            body.computeAH1();
+            body.checkBreak();
+        }
 }

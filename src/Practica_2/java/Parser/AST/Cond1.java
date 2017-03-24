@@ -1,5 +1,9 @@
 package AST;
 
+import Errors.*;
+import Compiler.SymbolTable;
+
+
 public class Cond1 implements Cond {
 	public final Exp exp;
 	public final Sentencia sent;
@@ -8,4 +12,11 @@ public class Cond1 implements Cond {
 		this.exp = exp;
 		this.sent = sent;
 	}
+        public void computeAH1() throws CompilerExc {
+            int expType = exp.computeType();
+            if (!(expType == SymbolTable.BOOLEAN) {
+                throw new IlegalTypeExc("Ilegal types: if can't accept "+ SymbolTable.typeToString(expType)+ " expresions \n" );
+            }
+            sent.computeAH1();
+        }
 }

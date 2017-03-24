@@ -1,5 +1,7 @@
 package AST;
 
+import Errors.*;
+
 public class VDef2 implements VDef {
 	public final Decl decl;
 	public final VDef vdef;
@@ -8,4 +10,8 @@ public class VDef2 implements VDef {
 		this.decl = decl;
 		this.vdef = vdef;
 	}
+        public void computeAH1() throws CompilerExc {
+                        decl.computeAH1();
+                        vdef.computeAH1();
+        }
 }

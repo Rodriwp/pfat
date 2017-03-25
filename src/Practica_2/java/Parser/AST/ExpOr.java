@@ -15,7 +15,7 @@ public class ExpOr implements Exp {
             int exp1Type = exp1.computeType();
             int exp2Type = exp2.computeType();
             if(exp1Type != exp2Type || exp1Type != SymbolTable.BOOLEAN){
-                throw new IlegalTypeExc("Ilegal types: "+ SymbolTable.typeToString(exp1Type),
+                throw new IlegalTypeExc("Ilegal types: "+ SymbolTable.typeToString(exp1Type)
                 + " || " +SymbolTable.typeToString(exp2Type)+ " \n" );
             }else{
                 return exp1Type;

@@ -1,5 +1,8 @@
 package AST;
 
+import Errors.*;
+import Compiler.SymbolTable;
+
 public class Repet {
 	public final Exp exp;
 	public final Sentencia sent;
@@ -9,9 +12,13 @@ public class Repet {
 		this.sent = sent;
 	}
         public void computeAH1() throws CompilerExc {
-            if (!(exp.computeType() == SymbolTable.BOOL)) {
+            int expType = exp.computeType();
+            if (!(expType == SymbolTable.BOOLEAN)) {
                 throw new IlegalTypeExc("Ilegal types: while can't accept "+ SymbolTable.typeToString(expType)+ " expresions \n" );
             }
             sent.computeAH1();
+        }
+        public int checkBreak() throws CompilerExc {
+            return sent.checkBreak();
         }
 }

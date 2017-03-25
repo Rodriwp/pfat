@@ -12,9 +12,10 @@ public class Asign {
 		this.exp = exp;
 	}
         public void computeAH1() throws CompilerExc {
-            int expType = exp.computeType();
-            if (!(expType == SymbolTable.getVariableType(ident))) {
-                throw new IlegalTypeExc("Ilegal types: Can't assign "+ SymbolTable.typeToString(exp1Type)
+            int exp1Type = SymbolTable.getVariableType(ident);
+            int exp2Type = exp.computeType();
+            if (!(exp1Type == exp2Type)) {
+                throw new IlegalTypeExc("Ilegal types: Can't assign "+ ident + " of type "+ SymbolTable.typeToString(exp1Type)
                 + "  = " +SymbolTable.typeToString(exp2Type)+ " \n" );
             }
         }

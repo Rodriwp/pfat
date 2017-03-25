@@ -14,9 +14,12 @@ public class Cond1 implements Cond {
 	}
         public void computeAH1() throws CompilerExc {
             int expType = exp.computeType();
-            if (!(expType == SymbolTable.BOOLEAN) {
+            if (!(expType == SymbolTable.BOOLEAN)) {
                 throw new IlegalTypeExc("Ilegal types: if can't accept "+ SymbolTable.typeToString(expType)+ " expresions \n" );
             }
             sent.computeAH1();
+        }
+        public int checkBreak() throws CompilerExc {
+            return sent.checkBreak();
         }
 }

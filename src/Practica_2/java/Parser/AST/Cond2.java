@@ -16,10 +16,13 @@ public class Cond2 implements Cond {
 	}
         public void computeAH1() throws CompilerExc {
             int expType = exp.computeType();
-            if (!(expType == SymbolTable.BOOLEAN) {
-                throw new IlegalTypeExc("Ilegal condition type: if  can't accept "+ SymbolTable.typeToString(exp1Type)+ " expresions \n" );
+            if (!(expType == SymbolTable.BOOLEAN)) {
+                throw new IlegalTypeExc("Ilegal condition type: if  can't accept "+ SymbolTable.typeToString(expType)+ " expresions \n" );
             }
             sent1.computeAH1();
             sent2.computeAH1();
+        }
+        public int checkBreak() throws CompilerExc {
+            return sent1.checkBreak()+sent2.checkBreak();
         }
 }

@@ -1,10 +1,10 @@
 package Errors;
 
-public class IlegalTypeExc extends CompilerExc {
+public class VarNotFoundExc extends CompilerExc {
 
     private String msg;
 
-    public IlegalTypeExc(String msg) {
+    public VarNotFoundExc(String msg) {
         this.msg = msg;
     }
 

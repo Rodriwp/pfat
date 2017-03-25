@@ -1,6 +1,7 @@
 import Parser.*;
 import Lexer.*;
 import java.io.*;
+import AST.S;
 
 public class Main
 {
@@ -28,9 +29,9 @@ public class Main
 	    sroot = p.parse();
 	    System.out.println("Analisis lexico y sintactico correctos");
 
-        S root = (S) sroot.value;
-        root.computeAH1();
-        System.out.println("Análisis semántico correcto");
+            S root = (S) sroot.value;
+            root.computeAH1();
+            System.out.println("Análisis semántico correcto");
 
 	} catch(IOException e) {
 	    System.out.println("Error abriendo fichero: " + args[0]);

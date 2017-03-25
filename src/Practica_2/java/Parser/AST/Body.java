@@ -12,10 +12,11 @@ public class Body implements Sentencia {
                         sent.computeAH1();
 
         }
-        public void checkBreak() throws CompilerExc {
+        public int checkBreak() throws CompilerExc {
             if(sent.checkBreak() != 0){
-                throws new BreakExc("you have "+ sent.checkBreak()+" extra breaks\n");
+                throw new BreakExc("you have "+ sent.checkBreak()+" extra breaks\n");
             }
+            return 0;
         }
 
 }

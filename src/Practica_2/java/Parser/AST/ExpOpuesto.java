@@ -10,7 +10,7 @@ public class ExpOpuesto implements Exp {
 		this.exp = exp;
 	}
         public int computeType() throws CompilerExc {
-            int expType = exp.computeType()
+            int expType = exp.computeType();
             if (expType == SymbolTable.INT) {
                 return SymbolTable.INT;
             }

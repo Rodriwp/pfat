@@ -10,9 +10,9 @@ public class ExpStr2Int implements Exp {
 		this.exp = exp;
 	}
         public int computeType() throws CompilerExc {
-            int expType = exp.computeType()
+            int expType = exp.computeType();
             if (expType == SymbolTable.STRING) {
-                return SymbolTable.STRING;
+                return SymbolTable.INT;
             }
 
             throw new IlegalTypeExc("Ilegal types: Str2Int( " +SymbolTable.typeToString(expType)+ " )\n" );

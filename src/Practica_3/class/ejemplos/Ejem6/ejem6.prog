@@ -1,0 +1,36 @@
+PF2017 Ejemplo
+
+vars
+
+int i;
+
+{
+i:=1;
+
+while (true) {
+  i:= i+1;
+  while (true) {
+    i:= i+1;
+    while (true) {
+      i:= i+1;
+      break 1;
+    }
+    print("Punto A");
+    print("Valor de i= " + Int2Str(i));
+    while (true) {
+      i:= i+1;
+      break 1;
+    }
+    print("Punto B");
+    print("Valor de i= " + Int2Str(i));
+    break 1;
+  } 
+  print("Punto C");
+  print("Valor de i= " + Int2Str(i));
+  break 1;
+}  
+print("Punto D");
+print("Valor final de i= " + Int2Str(i));
+
+}
+

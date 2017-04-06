@@ -1,0 +1,70 @@
+PF2017 Ejemplo(arg1, arg2, arg3)
+
+vars
+
+int fin, fin2, fin3;
+int i,j;
+int primero, segundo;
+
+{
+
+fin:= Str2Int(arg1);
+fin2:= Str2Int(arg2);
+fin3:= Str2Int(arg3);
+
+i:=2;
+
+while (i < fin) {
+
+while (i < fin) {
+  j:= i/2;
+  while (j>1) {
+    if (((i/j)*j)=i) then
+      break 1;
+    endif
+    j:=j-1;
+  }
+  if (j=1) then {
+    primero:= i;
+    print(Int2Str(i) + " es un numero primo");
+    break 1;
+  }
+  endif
+  i:=i+1;
+}
+
+i:=i+1;
+
+while (i < fin) {
+  j:= i/2;
+  while (true) {
+    if (((i/j)*j)=i) then
+      break 1;
+    endif
+    j:=j-1;
+    if ((j=1) and (i * primero > fin2)) then
+      break 3;
+    else 
+      if (j<2) then
+        break 1;
+      endif
+    endif
+  }
+  if (j=1) then {
+    segundo:= i;
+    print(Int2Str(i) + " tambien es un numero primo");
+    if (segundo + primero > fin3) then
+       break 2;
+    else 
+       break 1;
+    endif
+  }
+  endif
+  i:=i+1;
+}
+
+i:=i+1;
+}
+    
+}
+

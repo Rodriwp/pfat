@@ -19,6 +19,6 @@ public class S4 implements S {
                 lvar.computeAH1(SymbolTable.STRING);
                 vdef.computeAH1();
                 body.computeAH1();
-                body.checkBreak();
+                body.checkBreak(0);
         }
 }

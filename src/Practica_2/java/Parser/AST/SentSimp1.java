@@ -11,7 +11,6 @@ public class SentSimp1 implements Sentencia {
         public void computeAH1() throws CompilerExc {
                         asign.computeAH1();
         }
-        public int checkBreak() throws CompilerExc {
-            return 0;
+        public void checkBreak(int num_breaks) throws CompilerExc {
         }
 }

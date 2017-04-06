@@ -22,7 +22,8 @@ public class Cond2 implements Cond {
             sent1.computeAH1();
             sent2.computeAH1();
         }
-        public int checkBreak() throws CompilerExc {
-            return sent1.checkBreak()+sent2.checkBreak();
+        public void checkBreak(int num_breaks) throws CompilerExc {
+            sent1.checkBreak(num_breaks);
+            sent2.checkBreak(num_breaks);
         }
 }

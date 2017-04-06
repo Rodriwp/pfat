@@ -19,7 +19,7 @@ public class Cond1 implements Cond {
             }
             sent.computeAH1();
         }
-        public int checkBreak() throws CompilerExc {
-            return sent.checkBreak();
+        public void checkBreak(int num_breaks) throws CompilerExc {
+            sent.checkBreak(num_breaks);
         }
 }

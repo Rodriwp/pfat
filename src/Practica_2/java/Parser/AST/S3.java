@@ -15,6 +15,6 @@ public class S3 implements S {
         public void computeAH1() throws CompilerExc {
             vdef.computeAH1();
             body.computeAH1();
-            body.checkBreak();
+            body.checkBreak(0);
         }
 }

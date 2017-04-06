@@ -12,6 +12,6 @@ public class S2 implements S {
 	}
         public void computeAH1() throws CompilerExc {
                         body.computeAH1();
-                        body.checkBreak();
+                        body.checkBreak(0);
         }
 }

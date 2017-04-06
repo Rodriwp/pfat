@@ -16,6 +16,6 @@ public class S1 implements S {
         public void computeAH1() throws CompilerExc {
                         lvar.computeAH1(SymbolTable.STRING);
                         body.computeAH1();
-                        body.checkBreak();
+                        body.checkBreak(0);
         }
 }

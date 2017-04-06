@@ -11,7 +11,7 @@ public class Sent2 implements Sentencia {
         public void computeAH1() throws CompilerExc {
                         sentlist.computeAH1();
         }
-        public int checkBreak() throws CompilerExc {
-            return  sentlist.checkBreak();
+        public void checkBreak(int num_breaks) throws CompilerExc {
+            sentlist.checkBreak(num_breaks);
         }
 }

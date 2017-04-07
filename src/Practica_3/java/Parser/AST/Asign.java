@@ -2,6 +2,8 @@ package AST;
 
 import Errors.*;
 import Compiler.SymbolTable;
+import java.io.IOException;
+import java.io.BufferedWriter;
 
 public class Asign {
 	public final String ident;
@@ -19,4 +21,10 @@ public class Asign {
                 + "  = " +SymbolTable.typeToString(exp2Type)+ " \n" );
             }
         }
+        public void generateCode(BufferedWriter w, String tabs) throws IOException {
+            w.write(tabs +ident+"= ");
+            exp.generateCode(w,"");
+            w.write(";");
+        }
+
 }

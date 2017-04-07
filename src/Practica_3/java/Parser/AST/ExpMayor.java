@@ -2,6 +2,8 @@ package AST;
 
 import Errors.*;
 import Compiler.SymbolTable;
+import java.io.IOException;
+import java.io.BufferedWriter;
 
 public class ExpMayor implements Exp {
 	public final Exp exp1;
@@ -21,4 +23,10 @@ public class ExpMayor implements Exp {
                 return SymbolTable.BOOLEAN;
             }
         }
+        public void generateCode(BufferedWriter w, String tabs) throws IOException {
+            exp1.generateCode(w,tabs);
+            w.write(" >= ");
+            exp2.generateCode(w,tabs);
+        }
+
 }

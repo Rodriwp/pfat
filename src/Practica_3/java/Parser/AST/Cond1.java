@@ -2,6 +2,8 @@ package AST;
 
 import Errors.*;
 import Compiler.SymbolTable;
+import java.io.IOException;
+import java.io.BufferedWriter;
 
 
 public class Cond1 implements Cond {
@@ -21,5 +23,7 @@ public class Cond1 implements Cond {
         }
         public void checkBreak(int num_breaks) throws CompilerExc {
             sent.checkBreak(num_breaks);
+        }
+        public void generateCode(BufferedWriter w, String tabs) throws IOException {
         }
 }

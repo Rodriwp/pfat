@@ -2,6 +2,8 @@ package AST;
 
 import Errors.*;
 import Compiler.SymbolTable;
+import java.io.IOException;
+import java.io.BufferedWriter;
 
 public class ExpInt2Str implements Exp {
 	public final Exp exp;
@@ -16,6 +18,10 @@ public class ExpInt2Str implements Exp {
             }
 
             throw new IlegalTypeExc("Ilegal types: Int2Str( " +SymbolTable.typeToString(expType)+ " )\n" );
+        }
+        public void generateCode(BufferedWriter w, String tabs) throws IOException {
+            w.write("strtoint");
+            exp.generateCode(w,tabs);
         }
 
 }

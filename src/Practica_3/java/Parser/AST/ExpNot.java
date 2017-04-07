@@ -2,6 +2,8 @@ package AST;
 
 import Errors.*;
 import Compiler.SymbolTable;
+import java.io.IOException;
+import java.io.BufferedWriter;
 
 public class ExpNot implements Exp {
 	public final Exp exp;
@@ -16,5 +18,10 @@ public class ExpNot implements Exp {
             }else{
                 return expType;
             }
+        }
+        public void generateCode(BufferedWriter w, String tabs) throws IOException {
+            w.write("!(");
+            exp.generateCode(w,tabs);
+            w.write(")");
         }
 }

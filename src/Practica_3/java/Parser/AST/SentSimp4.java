@@ -1,6 +1,8 @@
 package AST;
 
 import Errors.*;
+import java.io.IOException;
+import java.io.BufferedWriter;
 
 public class SentSimp4 implements Sentencia {
 	public final Print print;
@@ -12,5 +14,8 @@ public class SentSimp4 implements Sentencia {
                         print.computeAH1();
         }
         public void checkBreak(int num_breaks) throws CompilerExc {
+        }
+        public void generateCode(BufferedWriter w, String tabs) throws IOException {
+            print.generateCode(w,tabs);
         }
 }

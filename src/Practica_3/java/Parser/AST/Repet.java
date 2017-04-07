@@ -2,6 +2,8 @@ package AST;
 
 import Errors.*;
 import Compiler.SymbolTable;
+import java.io.IOException;
+import java.io.BufferedWriter;
 
 public class Repet {
 	public final Exp exp;
@@ -21,5 +23,7 @@ public class Repet {
         public void checkBreak(int num_breaks) throws CompilerExc {
             sent.checkBreak(num_breaks+1);
 
+        }
+        public void generateCode(BufferedWriter w, String tabs) throws IOException {
         }
 }

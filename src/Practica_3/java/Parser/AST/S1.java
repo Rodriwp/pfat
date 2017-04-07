@@ -2,6 +2,8 @@ package AST;
 
 import Errors.*;
 import Compiler.SymbolTable;
+import java.io.IOException;
+import java.io.BufferedWriter;
 
 public class S1 implements S {
 	public final String ident;
@@ -17,5 +19,21 @@ public class S1 implements S {
                         lvar.computeAH1(SymbolTable.STRING);
                         body.computeAH1();
                         body.checkBreak(0);
+        }
+        public void generateCode(BufferedWriter w, String tabs) throws IOException {
+            w.write(tabs+"public static void " + ident + "(){");
+            w.newLine();
+            body.generateCode(w,tabs+"\t");
+            w.newLine();
+            w.write(tabs +"}");
+            // MAIN
+            w.newLine();
+            w.newLine();
+            w.write(tabs + "public static void main(String [] args){");
+            w.newLine();
+            w.write(tabs + "\t" +ident + "();");
+            w.newLine();
+            w.write(tabs + "}");
+
         }
 }

@@ -2,6 +2,8 @@ package AST;
 
 import Errors.*;
 import Compiler.SymbolTable;
+import java.io.IOException;
+import java.io.BufferedWriter;
 
 public class ExpOpuesto implements Exp {
 	public final Exp exp;
@@ -16,6 +18,9 @@ public class ExpOpuesto implements Exp {
             }
 
             throw new IlegalTypeExc("Ilegal types: Opuesto " +SymbolTable.typeToString(expType)+ " \n" );
+        }
+        public void generateCode(BufferedWriter w, String tabs) throws IOException {
+            w.write("opuesto");
         }
 
 }

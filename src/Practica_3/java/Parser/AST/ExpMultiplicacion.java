@@ -2,6 +2,8 @@ package AST;
 
 import Errors.*;
 import Compiler.SymbolTable;
+import java.io.IOException;
+import java.io.BufferedWriter;
 
 public class ExpMultiplicacion implements Exp {
 	public final Exp exp1;
@@ -20,6 +22,11 @@ public class ExpMultiplicacion implements Exp {
             }else{
                 return exp1Type;
             }
+        }
+        public void generateCode(BufferedWriter w, String tabs) throws IOException {
+            exp1.generateCode(w,tabs);
+            w.write("*");
+            exp2.generateCode(w,tabs);
         }
 
 }

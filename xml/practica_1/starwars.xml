@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE CatalogoPeliculas SYSTEM "./pelicula.dtd">
+<CatalogoPeliculas>
+    <Pelicula  año="1999" duracion="121 minutos">
+        <titulo>Star Wars:La amenaza fantasma </titulo>
+        <director>George Lucas</director>
+        <actor>
+            <nombre>Harrison Ford</nombre>
+            <personaje>Han Solo</personaje>
+            <personaje>Han Solo Congelado</personaje>
+        </actor>       
+        <genero>ciencia ficcion</genero>
+        <genero>clasico</genero>
+        <nacionalidad> USA</nacionalidad>
+        <clasificacion>&tp;</clasificacion>
+    </Pelicula>
+    <Pelicula  año="2002" duracion="121 minutos">
+        <titulo>Star Wars:El ataque de los clones</titulo>
+        <director>George Lucas</director>
+        <actor>
+            <nombre>Harrison Ford</nombre>
+            <personaje>Han Solo</personaje>
+            <personaje>Han Solo Congelado</personaje>
+        </actor>       
+        <genero>ciencia ficcion</genero>
+        <genero>clasico</genero>
+        <nacionalidad> USA</nacionalidad>
+        <clasificacion>&tp;</clasificacion>
+    </Pelicula>
+</CatalogoPeliculas>

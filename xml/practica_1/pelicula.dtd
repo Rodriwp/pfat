@@ -1,0 +1,15 @@
+<!ELEMENT CatalogoPeliculas (Pelicula*)>
+<!ELEMENT Pelicula (titulo,director,actor+,genero+,nacionalidad+,clasificacion?)>
+<!ELEMENT titulo (#PCDATA)>
+<!ELEMENT director (#PCDATA)>
+<!ELEMENT actor (nombre,personaje*)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT personaje (#PCDATA)>
+<!ELEMENT genero (#PCDATA)> 
+<!ELEMENT nacionalidad (#PCDATA)>
+<!ELEMENT clasificacion (#PCDATA)>
+
+<!ATTLIST Pelicula  año CDATA #REQUIRED >
+<!ATTLIST Pelicula  duracion CDATA #REQUIRED>
+
+<!ENTITY tp "Todos los Publicos">

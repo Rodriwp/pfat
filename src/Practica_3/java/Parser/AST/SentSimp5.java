@@ -6,6 +6,7 @@ import java.io.BufferedWriter;
 
 public class SentSimp5 implements Sentencia {
 	public final int valor;
+        private int num_break;
 
 	public SentSimp5(int valor) {
 		this.valor = valor;
@@ -13,6 +14,7 @@ public class SentSimp5 implements Sentencia {
         public void computeAH1() throws CompilerExc {
         }
         public void checkBreak(int num_breaks) throws CompilerExc {
+            this.num_break = num_breaks;
             if(valor <= 0){
                 throw new BreakExc("you have ilegal break: "+ valor+" is  not greater than 0\n");
             } else if(num_breaks < valor){
@@ -20,6 +22,6 @@ public class SentSimp5 implements Sentencia {
             }
         }
         public void generateCode(BufferedWriter w, String tabs) throws IOException {
-            w.write(tabs +"break");
+            w.write(tabs +"break label"+num_break-valor);
         }
 }

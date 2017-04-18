@@ -29,5 +29,16 @@ public class Cond2 implements Cond {
             sent2.checkBreak(num_breaks);
         }
         public void generateCode(BufferedWriter w, String tabs) throws IOException {
+            w.write(tabs+"if(");
+            exp.generateCode(w,"");
+            w.write("){");
+            w.newLine();
+            sent1.generateCode(w,tabs+"\t");
+            w.newLine();
+            w.write("}\nelse{");
+            sent2.generateCode(w,tabs+"\t");
+            w.newLine();
+            w.write("}");
         }
+
 }

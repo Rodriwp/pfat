@@ -22,6 +22,7 @@ public class ExpInt2Str implements Exp {
         public void generateCode(BufferedWriter w, String tabs) throws IOException {
             w.write("strtoint");
             exp.generateCode(w,tabs);
+
         }
 
 }

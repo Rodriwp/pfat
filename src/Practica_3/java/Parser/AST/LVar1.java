@@ -16,7 +16,7 @@ public class LVar1 implements LVar {
         public void computeAH1(int type) throws CompilerExc {
             SymbolTable.newVariableEntry(ident, type);
         }
-        public void generateCode(BufferedWriter w, String tabs) throws IOException {
-            w.write(ident + ";");
+        public String generateCode(String tabs){
+            return ident + ";";
         }
 }

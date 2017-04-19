@@ -25,7 +25,7 @@ public class ExpMayor implements Exp {
         }
         public void generateCode(BufferedWriter w, String tabs) throws IOException {
             exp1.generateCode(w,tabs);
-            w.write(" >= ");
+            w.write(" > ");
             exp2.generateCode(w,tabs);
         }
 

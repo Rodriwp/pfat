@@ -27,7 +27,7 @@ public class Repet {
 
         }
         public void generateCode(BufferedWriter w, String tabs) throws IOException {
-            w.write("label"+break_ident+":");
+            w.write(tabs +"label"+break_ident+":");
             w.newLine();
             w.write(tabs+"while(");
             exp.generateCode(w,"");
@@ -35,6 +35,6 @@ public class Repet {
             w.newLine();
             sent.generateCode(w,tabs+"\t");
             w.newLine();
-            w.write("}");
+            w.write(tabs+"}");
         }
 }

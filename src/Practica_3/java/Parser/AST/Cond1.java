@@ -31,6 +31,6 @@ public class Cond1 implements Cond {
             w.newLine();
             sent.generateCode(w,tabs+"\t");
             w.newLine();
-            w.write("}");
+            w.write(tabs+"}");
         }
 }

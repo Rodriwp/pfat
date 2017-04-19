@@ -17,18 +17,32 @@ public class Decl {
                         lvar.computeAH1(tipo);
         }
         public void generateCode(BufferedWriter w, String tabs) throws IOException {
+            String [] arguments= lvar.generateCode("").split(", ");
+            String [] out =arguments[arguments.length-1].split(";");
+            arguments[arguments.length-1] = out[0];
             switch(tipo){
                 case SymbolTable.INT:
-                    w.write(tabs+"int ");
+                    for(int i = 0;i < arguments.length;i++){
+                        w.write(tabs+"int ");
+                        w.write(arguments[i]+"=0;");
+                        w.newLine();
+                    }
                     break;
                 case SymbolTable.STRING:
-                    w.write(tabs+"String ");
+                    for(int i = 0;i < arguments.length;i++){
+                        w.write(tabs+"String ");
+                        w.write(arguments[i]+"=\"\";");
+                        w.newLine();
+                    }
                     break;
                 case SymbolTable.BOOLEAN:
-                    w.write(tabs+"bool ");
+                    for(int i = 0;i < arguments.length;i++){
+                        w.write(tabs+"bool ");
+                        w.write(arguments[i]+"=false;");
+                        w.newLine();
+                    }
                     break;
             }
-            lvar.generateCode(w,tabs);
         }
 
 }

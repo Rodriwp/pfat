@@ -6,5 +6,5 @@ import java.io.BufferedWriter;
 
 public interface LVar {
     public void computeAH1(int type) throws CompilerExc;
-    public void generateCode(BufferedWriter w, String tabs) throws IOException;
+    public String generateCode(String tabs);
 }

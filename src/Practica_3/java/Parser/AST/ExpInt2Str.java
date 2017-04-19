@@ -20,8 +20,9 @@ public class ExpInt2Str implements Exp {
             throw new IlegalTypeExc("Ilegal types: Int2Str( " +SymbolTable.typeToString(expType)+ " )\n" );
         }
         public void generateCode(BufferedWriter w, String tabs) throws IOException {
-            w.write("strtoint");
-            exp.generateCode(w,tabs);
+            w.write("String.valueOf(");
+            exp.generateCode(w,"");
+            w.write(")");
 
         }
 

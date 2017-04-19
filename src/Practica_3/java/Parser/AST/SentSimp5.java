@@ -22,6 +22,6 @@ public class SentSimp5 implements Sentencia {
             }
         }
         public void generateCode(BufferedWriter w, String tabs) throws IOException {
-            w.write(tabs +"break label"+num_break-valor);
+            w.write(tabs +"break label"+(num_break-valor)+";");
         }
 }

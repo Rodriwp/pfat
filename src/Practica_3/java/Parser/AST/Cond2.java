@@ -35,10 +35,11 @@ public class Cond2 implements Cond {
             w.newLine();
             sent1.generateCode(w,tabs+"\t");
             w.newLine();
-            w.write("}\nelse{");
+            w.write(tabs+"}\n"+tabs+"else{");
+            w.newLine();
             sent2.generateCode(w,tabs+"\t");
             w.newLine();
-            w.write("}");
+            w.write(tabs+"}");
         }
 
 }

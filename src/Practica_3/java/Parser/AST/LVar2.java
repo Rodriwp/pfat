@@ -18,8 +18,7 @@ public class LVar2 implements LVar {
             SymbolTable.newVariableEntry(ident, type);
             lvar.computeAH1(type);
         }
-        public void generateCode(BufferedWriter w, String tabs) throws IOException {
-            w.write(ident + ",");
-            lvar.generateCode(w,tabs);
+        public String generateCode(String tabs) {
+            return ident + ", "+lvar.generateCode(tabs);
         }
 }

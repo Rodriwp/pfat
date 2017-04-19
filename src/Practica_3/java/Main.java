@@ -7,8 +7,6 @@ public class Main{
     private static void codeGenerator(String className, S ast) {
         try {
             BufferedWriter w= new BufferedWriter(new FileWriter(className + ".java"));
-            w.write("import GeneratedCodeLib.*;");
-            w.newLine();
             w.write("import java.util.*;");
             w.newLine();
             w.newLine();

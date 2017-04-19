@@ -25,6 +25,5 @@
         <genero>ciencia ficcion</genero>
         <genero>clasico</genero>
         <nacionalidad> USA</nacionalidad>
-        <clasificacion>&tp;</clasificacion>
     </Pelicula>
 </CatalogoPeliculas>

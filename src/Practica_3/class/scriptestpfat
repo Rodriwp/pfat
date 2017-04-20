@@ -77,6 +77,43 @@ cd prueba3/
 java Main ../ejemplos/Ejem3/ejem3.prog Ej3
 javac Ej3.java
 #Test ejemplo 3
+echo "TEST:"
+java Ej3 10
+echo "CORRECT:"
+echo "Resultado= 0"
+echo ""
+echo "TEST:"
+java Ej3 14
+echo "CORRECT:"
+echo "Salida 2"
+echo "Resultado= 22"
+echo ""
+echo "TEST:"
+java Ej3 81
+echo "CORRECT:"
+echo "Salida 1"
+echo "Salida 2"
+echo "Resultado= 194"
+echo ""
+echo "TEST:"
+java Ej2 354
+echo "Salida 1"
+echo "Resultado= 703"
+echo ""
+echo "TEST:"
+java Ej3 300
+echo "CORRECT:"
+echo "Salida 1"
+echo "Salida 2"
+echo "Resultado= 452"
+echo ""
+echo "TEST:"
+java Ej3 458
+echo "CORRECT:"
+echo "Salida 1"
+echo "Salida 2"
+echo "Resultado= 803"
+echo ""
 cd ..
 #Ejemplo 4
 mkdir prueba4
@@ -85,6 +122,23 @@ cd prueba4/
 java Main ../ejemplos/Ejem4/ejem4.prog Ej4
 javac Ej4.java
 #Test ejemplo 4
+echo "TEST:"
+java Ej4 tu
+echo "CORRECT:"
+echo "Hola tu"
+echo "Resultado 1= -5"
+echo "Resultado 2= 1"
+echo "Resultado 3= 2"
+echo "Resultado 4= 2"
+echo "Resultado 5= 78"
+echo "Resultado 6= 78"
+echo "Resultado 7= 1000"
+echo "Resultado 8 correcto"
+echo "Resultado 9 correcto"
+echo "Resultado 10 correcto"
+echo "Resultado 11 correcto"
+echo "Resultado 12 correcto"
+echo ""
 cd ..
 #Ejemplo 5
 mkdir prueba5
@@ -93,6 +147,28 @@ cd prueba5/
 java Main ../ejemplos/Ejem5/ejem5.prog Ej5
 javac Ej5.java
 #Test ejemplo 5
+#Si la suma de los dos ultimos numeros primos es mayor que el arg3 se termina el test.
+#Saca todos los numeros primos por debajo del arg1
+#Si el penultimo primo sacado multiplicado por un numero menor que arg1 y mayor que el ultimo primo es mayor que arg2 termina el test.
+echo "TEST:"
+java Ej5 1 2 3
+echo "CORRECT:"
+echo ""
+echo "TEST:"
+java Ej5 5 5 5
+echo "CORRECT:"
+echo "2 es un numero primo"
+echo "3 tambien es un numero primo"
+echo ""
+echo "TEST:"
+java Ej5 12 12 9
+echo "CORRECT:"
+echo "2 es un numero primo"
+echo "3 tambien es un numero primo"
+echo "5 tambien es un numero primo"
+echo "7 tambien es un numero primo"
+echo "11 tambien es un numero primo"
+echo ""
 cd ..
 #Ejemplo 6
 mkdir prueba6
@@ -101,6 +177,20 @@ cd prueba6/
 java Main ../ejemplos/Ejem6/ejem6.prog Ej6
 javac Ej6.java
 #Test ejemplo 6
+#El test no tiene argumentos por lo que no se le puede pasar ningun valor.
+#Hay 2 espacios en los resultados.
+echo "TEST:"
+java Ej6 
+echo "CORRECT:"
+echo "Punto A"
+echo "Valor de i=  4"
+echo "Punto B"
+echo "Valor de i=  5"
+echo "Punto C"
+echo "Valor de i=  5"
+echo "Punto D"
+echo "Valor final de i=  5"
+echo ""
 cd ..
 #Ejemplo 7
 mkdir prueba7
@@ -109,6 +199,16 @@ cd prueba7/
 java Main ../ejemplos/Ejem7/ejem7.prog Ej7
 javac Ej7.java
 #Test ejemplo 7
+#El test no tiene argumentos por lo que no se le puede pasar ningun valor.
+#Hay 2 espacios en los resultados.
+echo "TEST:"
+java Ej7 
+echo "CORRECT:"
+echo "Punto B"
+echo "Valor de i=  4"
+echo "Punto D"
+echo "Valor final de i=  4"
+echo ""
 cd ..
 #Ejemplo 8
 mkdir prueba8
@@ -117,4 +217,31 @@ cd prueba8/
 java Main ../ejemplos/Ejem8/ejem8.prog Ej8
 javac Ej8.java
 #Test ejemplo 8
+#Hay 2 espacios en los resultados.
+echo "TEST:"
+java Ej8 7
+echo "CORRECT:"
+echo "Punto D"
+echo "Valor final de i=  4"
+echo ""
+echo "TEST:"
+java Ej8 0
+echo "CORRECT:"
+echo "Punto A"
+echo "Valor de i=  4"
+echo "Punto B"
+echo "Valor de i=  5"
+echo "Punto C"
+echo "Valor de i=  5"
+echo "Punto D"
+echo "Valor final de i=  5"
+echo ""
+echo "TEST:"
+java Ej8 1
+echo "CORRECT:"
+echo "Punto C"
+echo "Valor de i=  4"
+echo "Punto D"
+echo "Valor final de i=  4"
+echo ""
 cd ..

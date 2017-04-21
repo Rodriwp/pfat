@@ -15,6 +15,8 @@ public class ExpEntero implements Exp {
                         return SymbolTable.INT;
         }
         public void generateCode(BufferedWriter w, String tabs) throws IOException {
+            w.write("(");
             w.write(Integer.toString(new Integer(valor)));
+            w.write(")");
         }
 }

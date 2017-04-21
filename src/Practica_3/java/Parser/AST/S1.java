@@ -36,15 +36,15 @@ public class S1 implements S {
             // MAIN
             w.newLine();
             w.newLine();
-            w.write(tabs + "public static void main(String [] argv){");
+            w.write(tabs + "public static void main(String [] args){");
             w.newLine();
             w.write(tabs+"\tString [] args_real = new String["+Integer.toString(arguments.length)+"];");
             w.newLine();
             w.write(tabs+"\tfor(int i = 0; i <"+Integer.toString(arguments.length)+"; i++){");
             w.newLine();
-            w.write(tabs+"\t\tif(argv.length > i){");
+            w.write(tabs+"\t\tif(args.length > i){");
             w.newLine();
-            w.write(tabs+"\t\t\targs_real[i]=argv[i];");
+            w.write(tabs+"\t\t\targs_real[i]=args[i];");
             w.newLine();
             w.write(tabs+"\t\t}else{");
             w.newLine();

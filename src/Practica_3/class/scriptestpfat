@@ -78,36 +78,40 @@ java Main ../ejemplos/Ejem3/ejem3.prog Ej3
 javac Ej3.java
 #Test ejemplo 3
 echo "TEST:"
-java Ej3 10
-echo "CORRECT:"
-echo "Resultado= 0"
-echo ""
-echo "TEST:"
-java Ej3 14
+java Ej3 101
 echo "CORRECT:"
 echo "Salida 2"
-echo "Resultado= 22"
+echo "Resultado= 158"
 echo ""
 echo "TEST:"
-java Ej3 81
+java Ej3 127
 echo "CORRECT:"
 echo "Salida 1"
 echo "Salida 2"
-echo "Resultado= 194"
+echo "Resultado= 223"
 echo ""
 echo "TEST:"
-java Ej2 354
+java Ej3 85
+echo "CORRECT:"
+echo "Salida 2"
+echo "Resultado= 217"
+echo ""
+echo "TEST:"
+java Ej3 356
+echo "Salida 2"
+echo "Resultado= 749"
+echo ""
+echo "TEST:"
+java Ej3 520
+echo "CORRECT:"
+echo "Resultado= 1046"
+echo ""
+echo "TEST:"
+java Ej3 354
+echo "CORRECT:"
 echo "Salida 1"
 echo "Resultado= 703"
 echo ""
-echo "TEST:"
-java Ej3 300
-echo "CORRECT:"
-echo "Salida 1"
-echo "Salida 2"
-echo "Resultado= 452"
-echo ""
-echo "TEST:"
 java Ej3 458
 echo "CORRECT:"
 echo "Salida 1"
@@ -123,14 +127,14 @@ java Main ../ejemplos/Ejem4/ejem4.prog Ej4
 javac Ej4.java
 #Test ejemplo 4
 echo "TEST:"
-java Ej4 tu
+java Ej4 luis
 echo "CORRECT:"
-echo "Hola tu"
+echo "Hola luis"
 echo "Resultado 1= -5"
 echo "Resultado 2= 1"
-echo "Resultado 3= 2"
+echo "Resultado 3= 10"
 echo "Resultado 4= 2"
-echo "Resultado 5= 78"
+echo "Resultado 5= 82"
 echo "Resultado 6= 78"
 echo "Resultado 7= 1000"
 echo "Resultado 8 correcto"
@@ -151,23 +155,52 @@ javac Ej5.java
 #Saca todos los numeros primos por debajo del arg1
 #Si el penultimo primo sacado multiplicado por un numero menor que arg1 y mayor que el ultimo primo es mayor que arg2 termina el test.
 echo "TEST:"
-java Ej5 1 2 3
+java Ej5 1 1 1
 echo "CORRECT:"
 echo ""
 echo "TEST:"
-java Ej5 5 5 5
+java Ej5 20 323 24
 echo "CORRECT:"
 echo "2 es un numero primo"
 echo "3 tambien es un numero primo"
-echo ""
-echo "TEST:"
-java Ej5 12 12 9
-echo "CORRECT:"
-echo "2 es un numero primo"
-echo "3 tambien es un numero primo"
-echo "5 tambien es un numero primo"
+echo "5 es un numero primo"
 echo "7 tambien es un numero primo"
-echo "11 tambien es un numero primo"
+echo "11 es un numero primo"
+echo "13 tambien es un numero primo"
+echo "17 es un numero primo"
+echo "19 tambien es un numero primo"
+echo ""
+echo "TEST:"
+java Ej5 18 323 24
+echo "CORRECT:"
+echo "2 es un numero primo"
+echo "3 tambien es un numero primo"
+echo "5 es un numero primo"
+echo "7 tambien es un numero primo"
+echo "11 es un numero primo"
+echo "13 tambien es un numero primo"
+echo "17 es un numero primo"
+echo ""
+echo "TEST:"
+java Ej5 20 322 24
+echo "CORRECT:"
+echo "2 es un numero primo"
+echo "3 tambien es un numero primo"
+echo "5 es un numero primo"
+echo "7 tambien es un numero primo"
+echo "11 es un numero primo"
+echo "13 tambien es un numero primo"
+echo "17 es un numero primo"
+echo ""
+echo "TEST:"
+java Ej5 20 323 23
+echo "CORRECT:"
+echo "2 es un numero primo"
+echo "3 tambien es un numero primo"
+echo "5 es un numero primo"
+echo "7 tambien es un numero primo"
+echo "11 es un numero primo"
+echo "13 tambien es un numero primo"
 echo ""
 cd ..
 #Ejemplo 6
@@ -219,12 +252,6 @@ javac Ej8.java
 #Test ejemplo 8
 #Hay 2 espacios en los resultados.
 echo "TEST:"
-java Ej8 7
-echo "CORRECT:"
-echo "Punto D"
-echo "Valor final de i=  4"
-echo ""
-echo "TEST:"
 java Ej8 0
 echo "CORRECT:"
 echo "Punto A"
@@ -244,4 +271,34 @@ echo "Valor de i=  4"
 echo "Punto D"
 echo "Valor final de i=  4"
 echo ""
+java Ej8 2
+echo "CORRECT:"
+echo "Punto D"
+echo "Valor final de i=  4"
+echo ""
 cd ..
+java Main ../ejemplos/Ejem8/ejem8.prog Ej8
+java Main ejemplos/ErrLex1/errLex1.prog prog
+java Main ejemplos/ErrLex2/errLex2.prog prog
+java Main ejemplos/ErrSem1/errSem1.prog prog
+java Main ejemplos/ErrSem2/errSem2.prog prog
+java Main ejemplos/ErrSem3/errSem3.prog prog
+java Main ejemplos/ErrSem4/errSem4.prog prog
+java Main ejemplos/ErrSem5/errSem5.prog prog
+java Main ejemplos/ErrSem6/errSem6.prog prog
+java Main ejemplos/ErrSem7/errSem7.prog prog
+java Main ejemplos/ErrSem8/errSem8.prog prog
+java Main ejemplos/ErrSem9/errSem9.prog prog
+java Main ejemplos/ErrSem10/errSem10.prog prog
+java Main ejemplos/ErrSem11/errSem11.prog prog
+java Main ejemplos/ErrSem12/errSem12.prog prog
+java Main ejemplos/ErrSem13/errSem13.prog prog
+java Main ejemplos/ErrSem14/errSem14.prog prog
+java Main ejemplos/ErrSem15/errSem15.prog prog
+java Main ejemplos/ErrSem16/errSem16.prog prog
+java Main ejemplos/ErrSem17/errSem17.prog prog
+java Main ejemplos/ErrSem18/errSem18.prog prog
+java Main ejemplos/ErrSint1/errSint1.prog prog
+java Main ejemplos/ErrSint2/errSint2.prog prog
+java Main ejemplos/ErrSint3/errSint3.prog prog
+java Main ejemplos/ErrSint4/errSint4.prog prog

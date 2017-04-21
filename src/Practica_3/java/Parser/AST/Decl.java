@@ -37,7 +37,7 @@ public class Decl {
                     break;
                 case SymbolTable.BOOLEAN:
                     for(int i = 0;i < arguments.length;i++){
-                        w.write(tabs+"bool ");
+                        w.write(tabs+"boolean ");
                         w.write(arguments[i]+"=false;");
                         w.newLine();
                     }

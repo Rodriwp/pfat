@@ -33,7 +33,7 @@ public class S3 implements S {
             // MAIN
             w.newLine();
             w.newLine();
-            w.write(tabs + "public static void main(){");
+            w.write(tabs + "public static void main(String [] args){");
             w.newLine();
             w.write(tabs + "\t" +ident + "();");
             w.newLine();
